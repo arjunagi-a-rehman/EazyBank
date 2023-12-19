@@ -11,6 +11,7 @@
 	<groupId>com.eazyBank</groupId>
 	<artifactId>loan</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>loan</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -68,12 +69,29 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>eazybank/${project.artifactId}:s4</name>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.0</version>
+				<configuration>
+					<to>
+						<image>abdul12527/${project.artifactId}:s4</image>
+						<auth>
+							<username>abdul12527</username>
+							<password>dckr_pat_TL5WNYfH9pEVLUSfKVws3fBpQ50</password>
+						</auth>
+					</to>
 				</configuration>
 			</plugin>
 		</plugins>

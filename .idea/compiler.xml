@@ -7,14 +7,18 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="loan" />
-        <module name="Accounts" />
         <module name="cards" />
+        <module name="accounts" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Accounts" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Accounts" options="-parameters" />
+      <module name="accounts" options="-parameters" />
       <module name="cards" options="-parameters" />
       <module name="loan" options="-parameters" />
     </option>
